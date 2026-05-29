@@ -1,6 +1,6 @@
-# resilientco_livecoding
+# Resilient CO Live Coding
 
-A small Python coding kata for a mini Venmo-style application.
+A small Python coding challenge for a mini Venmo-style application.
 
 ## Project Overview
 
