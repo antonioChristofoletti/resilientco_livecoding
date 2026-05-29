@@ -1,7 +1,7 @@
 import pytest
 
 from src.models.events import Event, FriendshipEvent, Payment
-from src.models.exceptions import CreditCardException, PaymentException, UsernameException
+from src.models.exceptions import CreditCardException, FriendshipException, PaymentException, UsernameException
 from src.models.mini_venmo import MiniVenmo
 from src.models.user import User
 
@@ -151,7 +151,7 @@ class TestFriendship:
     def test_add_self_friend_raises(self, bobby_and_carol):
         bobby, _ = bobby_and_carol
 
-        with pytest.raises(PaymentException):
+        with pytest.raises(FriendshipException):
             bobby.add_friend(bobby)
 
 

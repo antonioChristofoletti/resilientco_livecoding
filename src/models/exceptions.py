@@ -8,3 +8,6 @@ class PaymentException(Exception):
 
 class CreditCardException(Exception):
     pass
+
+class FriendshipException(Exception):
+    pass

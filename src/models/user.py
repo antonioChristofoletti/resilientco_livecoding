@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 
 from src.models.events import Event, FriendshipEvent, Payment
-from src.models.exceptions import CreditCardException, PaymentException, UsernameException
+from src.models.exceptions import CreditCardException, FriendshipException, PaymentException, UsernameException
 
 
 class User:
@@ -24,7 +24,7 @@ class User:
 
     def add_friend(self, new_friend: User) -> FriendshipEvent | None:
         if self.username == new_friend.username:
-            raise PaymentException('User cannot add themselves as a friend.')
+            raise FriendshipException('User cannot add themselves as a friend.')
 
         # Maybe we should raise an exception here instead of silently ignoring? For simplicity, just returning None for now.
         if new_friend in self.friends:
